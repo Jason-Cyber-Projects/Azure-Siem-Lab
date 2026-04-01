@@ -72,6 +72,4 @@ This architecture was designed to simulate a basic SOC workflow:
 - Collect logs from multiple sources  
 - Analyze activity centrally  
 - Detect suspicious behavior  
-- Generate actionable incidents  
-
-The focus is on demonstrating detection and response capabilities rather than complex infrastructure design.
+- Generate incidents
