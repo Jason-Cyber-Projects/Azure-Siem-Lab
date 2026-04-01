@@ -6,7 +6,7 @@ This document outlines the basic automation and response workflow implemented in
 
 ## Purpose
 
-The purpose of automation in this lab is to demonstrate the ability to respond to security events, not just detect them.
+The purpose of automation in this lab is to respond to security events, not just detect them.
 
 This includes:
 - Triggering alerts based on detection rules  
