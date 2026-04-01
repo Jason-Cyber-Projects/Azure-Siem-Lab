@@ -51,17 +51,16 @@ Severity levels were used to prioritize alerts:
 - **Medium** → Suspicious activity requiring investigation  
 - **High** → Strong indicator of compromise  
 
-This helps guide analyst response and triage priority.
 
 ---
 
-### Why This Matters
+### Why Automation is needed
 
 Automation improves SOC efficiency by:
 
 - Reducing manual effort  
 - Standardizing incident creation  
-- Ensuring consistent alert handling  
+- Ensuring consistent alert handling and visabity
 - Enabling faster response times  
 
 Even basic automation ensures that important events are not missed.
@@ -85,7 +84,7 @@ Once an incident is created:
 
 ## Future Improvements
 
-This lab focuses on foundational automation. In a production SOC, automation could be expanded to include:
+In a real SOC setting, automation could be expanded to include:
 
 - Playbooks using Azure Logic Apps  
 - Automated email or Teams notifications  
@@ -93,7 +92,3 @@ This lab focuses on foundational automation. In a production SOC, automation cou
 - Integration with ticketing systems  
 
 ---
-
-## Summary
-
-This automation workflow demonstrates the transition from detection to response. Alerts are automatically converted into actionable incidents, allowing for structured investigation and efficient SOC operations.
