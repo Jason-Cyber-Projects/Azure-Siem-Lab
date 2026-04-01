@@ -1,0 +1,51 @@
+// ============================================
+// Detection: Different IP / Suspicious New Sign-In
+// Source: Microsoft Sentinel Analytics Rule
+// ============================================
+//
+// Description:
+// This detection identifies successful sign-in activity from an unfamiliar,
+// low-frequency, or newly observed IP address.
+//
+// It is designed to surface potentially suspicious authentication behavior
+// where the source IP differs from the user's recent sign-in history.
+//
+// Trigger Logic:
+// - Monitors Entra ID sign-in activity
+// - Focuses on successful sign-ins in the recent detection window
+// - Compares recent sign-ins against historical sign-in activity
+// - Flags activity from an IP address not commonly or previously associated
+//   with the user
+//
+// Why This Matters:
+// Suspicious or unfamiliar IP-based sign-ins can indicate:
+// - Unauthorized access attempts
+// - Use of compromised credentials
+// - Login activity from unexpected devices or locations
+// - Abnormal authentication patterns requiring investigation
+//
+// IP-based detections add important context even when the login itself is successful.
+//
+// Analyst Notes:
+// - Review whether the IP address is expected for the user
+// - Compare the IP against recent and historical sign-in behavior
+// - Check for other suspicious activity tied to the same account
+// - Review authentication timing, frequency, and follow-on behavior
+// - Escalate if the sign-in appears inconsistent with normal user activity
+//
+// Expected Outcome:
+// This rule generates an alert in Microsoft Sentinel when suspicious
+// sign-in activity from a new or unfamiliar IP is identified.
+// The alert is grouped into an incident for analyst investigation.
+//
+// ============================================
+SigninLogs
+| where TimeGenerated >= ago(1h)
+| where ResultType == 0
+| join kind=leftanti (
+    SigninLogs
+    | where TimeGenerated between (ago(7d) .. ago(1h))
+    | summarize by UserPrincipalName, IPAddress
+) on UserPrincipalName, IPAddress
+| project TimeGenerated, UserPrincipalName, IPAddress, AppDisplayName
+// ============================================
