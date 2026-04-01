@@ -1,13 +1,13 @@
 # Architecture Overview
 
-This document describes the overall structure of the Azure SIEM lab and how data flows through the environment from activity to detection and incident creation.
+This document outlines the overall structure of the Azure SIEM lab and how data flows through the environment from activity to detection and incident creation.
 
 ---
 
 ## Environment Components
 
 - **Azure Resource Group**  
-  Contains all resources for the SOC lab environment.
+  Contains all resources for the SOC lab environment. (Such as Virtual Machines and Log Analytic Workspaces)
 
 - **Log Analytics Workspace**  
   Central location where logs are collected and stored.
@@ -19,7 +19,7 @@ This document describes the overall structure of the Azure SIEM lab and how data
   Simulated endpoint used to generate activity and security events.
 
 - **Entra ID (Azure AD)**  
-  Identity provider generating authentication and audit logs.
+  Identity provider generating authentication and audit logs. Where Users and Groups are designed.
 
 ---
 
