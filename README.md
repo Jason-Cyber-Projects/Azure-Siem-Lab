@@ -70,7 +70,6 @@ azure-soc-lab/
 ├── README.md
 ├── docs/
 │   ├── detections.md
-│   ├── incident-validation.md
 │   ├── automation.md
 │   ├── architecture.md
 │
