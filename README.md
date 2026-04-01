@@ -23,8 +23,8 @@ The environment simulates real-world security monitoring by ingesting authentica
 - Windows Virtual Machine (endpoint)  
 - Entra ID users and groups  
 
----
 
+---
 ## Data Sources
 - Entra ID Sign-in Logs  
 - Entra ID Audit Logs  
@@ -35,7 +35,8 @@ The environment simulates real-world security monitoring by ingesting authentica
 ## Detection Scenarios
 - **Brute-force login attempts** (multiple failed logins)  
 - **Failed login followed by success** (potential credential compromise)  
-- **Suspicious endpoint activity** (PowerShell/admin behavior)  
+- **Suspicious endpoint activity** (PowerShell/admin behavior)
+-  **Logins from different IP addresses for the same account** ( Geolocation detection)
 
 ---
 
