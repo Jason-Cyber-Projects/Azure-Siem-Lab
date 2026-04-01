@@ -1,6 +1,6 @@
 # Detection Engineering
 
-This document outlines the detection logic implemented in Microsoft Sentinel using KQL (Kusto Query Language). Each detection was designed to identify suspicious activity within the Azure SOC lab and demonstrate practical analyst thinking through detection, validation, and response.
+This document outlines the detection logic that was used in Microsoft Sentinel using KQL (Kusto Query Language). Each detection was designed to identify suspicious activity within the Azure and demonstrate practical analyst thinking through detection, validation, and response.
 
 ---
 
@@ -57,7 +57,7 @@ SigninLogs
 ```
 
 ### Why It Matters
-A failed-then-success pattern can be a strong indicator of account compromise. It suggests the activity moved beyond probing and may have resulted in actual access.
+A failed-then-success pattern can be a strong indicator of account compromise.
 
 ### Analyst Response
 - Investigate the login timeline for the account
@@ -98,10 +98,10 @@ IP-based detection adds important context to authentication analysis. Even when 
 ## 4. Suspicious PowerShell or Administrative Activity
 
 ### Purpose
-Detect potentially suspicious command execution or administrative behavior on the Windows endpoint.
+Detect potentially suspicious command executions or administrative behavior on the Windows endpoint (The Virtual Machine)
 
 ### Detection Logic
-PowerShell and administrative tools are commonly used by both administrators and attackers. This detection focuses on identifying activity that may indicate unauthorized enumeration, execution, or misuse of built-in tooling on the VM.
+PowerShell and administrative tools are commonly used by both administrators and attackers. This detection focuses on identifying activity that may indicate misuse of built-in tooling on the VM.
 
 ### KQL Query
 ```kql
