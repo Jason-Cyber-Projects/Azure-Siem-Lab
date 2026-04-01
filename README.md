@@ -86,6 +86,7 @@ azure-soc-lab/
 │   ├── Different-IP-Sign-In.kql
 │   ├── Endpoint-Powershell-Alert.kql
 ```
+---
 ## Key Takeaways
 
 - Detections must be validated with real activity, not assumptions
