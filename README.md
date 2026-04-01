@@ -1,4 +1,5 @@
-# Azure SOC Lab (Microsoft Sentinel)
+# Azure SIEM
+Lab (Microsoft Sentinel)
 
 ## Overview
 This project demonstrates the design and implementation of a cloud-based Security Operations Center (SOC) using Microsoft Azure and Microsoft Sentinel.
