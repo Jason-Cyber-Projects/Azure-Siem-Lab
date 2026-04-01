@@ -1,6 +1,6 @@
 # Architecture Overview
 
-This document describes the overall structure of the Azure SOC lab and how data flows through the environment from activity to detection and incident creation.
+This document describes the overall structure of the Azure SIEM lab and how data flows through the environment from activity to detection and incident creation.
 
 ---
 
