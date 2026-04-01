@@ -94,4 +94,4 @@ This project focuses on detection and response workflows rather than infrastruct
 ---
 
 ## Author
-Jason-Cyber-Projects
+Jason P
