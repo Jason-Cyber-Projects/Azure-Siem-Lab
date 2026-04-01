@@ -7,16 +7,16 @@ The environment ingests identity and endpoint logs, applies detection logic usin
 
 ---
 
-## What This Project Proves
-- Ability to build and configure a SIEM (Microsoft Sentinel)
-- Understanding of authentication and endpoint log analysis
+## What This Project Demonstrates
+- Ability to build, configure, and monitor a SIEM (Microsoft Sentinel)
+- Understanding of endpoint log analysis
 - Experience writing detection logic using KQL
 - Ability to validate alerts through simulated attack activity
 - Exposure to incident response and automation workflows
 
 ---
 
-## Environment Components
+## Cloud Environment Components
 - Azure Resource Group  
 - Log Analytics Workspace  
 - Microsoft Sentinel (SIEM)  
@@ -36,12 +36,12 @@ The environment ingests identity and endpoint logs, applies detection logic usin
 - **Brute-force login attempts** (multiple failed logins)  
 - **Failed login followed by success** (potential credential compromise)  
 - **Suspicious endpoint activity** (PowerShell/admin behavior)
--  **Logins from different IP addresses for the same account** ( Geolocation detection)
+-  **Sign-ins from different IP addresses for the same account** (Impossible logins due to geolocation)
 
 ---
 
 ## Validation Approach
-Detection rules were tested by generating controlled activity within the environment, including repeated failed logins and endpoint actions, to ensure alerts were triggered and visible in Microsoft Sentinel.
+Detection rules were tested/validated by controlled activity within the environment, including repeated failed logins and endpoint actions, to ensure alerts were triggered and visible in Microsoft Sentinel.
 
 ---
 
@@ -55,12 +55,11 @@ Basic automation was implemented to:
 ---
 
 ## Skills Demonstrated
-- Azure infrastructure deployment  
-- SIEM configuration and log ingestion  
-- KQL query development  
-- Detection engineering  
-- Security event analysis  
-- Incident response fundamentals  
+- Detection engineering using KQL
+- Security event analysis
+- SIEM configuration and log ingestion
+- Azure infrastructure deployment
+- Incident response fundamentals
 
 ---
 
@@ -91,7 +90,7 @@ azure-soc-lab/
 ---
 
 ## Notes
-This project focuses on detection and response workflows rather than infrastructure complexity. The goal is to demonstrate practical SOC capabilities in a controlled cloud environment.
+This project focuses on detection and response workflows and to demonstrate practical SOC capabilities in a controlled cloud environment rather than to prove knowledge of Azure infrastructure (even though a understanding of said infrastructure was needed to get this to work)
 
 ---
 
