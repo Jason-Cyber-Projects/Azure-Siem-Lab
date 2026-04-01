@@ -1,0 +1,55 @@
+// ============================================
+// Detection: Failed Logins Followed by Successful Login
+// Source: Microsoft Sentinel Analytics Rule
+// ============================================
+//
+// Description:
+// This detection identifies accounts that experience multiple failed login
+// attempts followed by a successful authentication within a short time window.
+//
+// It is designed to detect potential credential compromise scenarios where
+// an attacker successfully guesses or obtains valid credentials after repeated failures.
+//
+// Trigger Logic:
+// - Monitors Entra ID sign-in activity
+// - Counts failed authentication attempts per user
+// - Identifies a successful login occurring after one or more failures
+// - Correlates failures and success within a defined time window
+//
+// Why This Matters:
+// A sequence of failed logins followed by a success is a strong indicator of:
+// - Brute force attacks
+// - Password spraying with eventual success
+// - Credential stuffing
+// - Unauthorized access using compromised credentials
+//
+// Unlike pure failed login detection, this indicates a higher risk event
+// because access was actually achieved.
+//
+// Analyst Notes:
+// - Immediately review the affected user account
+// - Validate whether the successful login was legitimate
+// - Investigate the source IP address and login context
+// - Check for additional suspicious activity post-login
+// - Consider forcing password reset or session revocation
+//
+// Expected Outcome:
+// This rule generates a high-severity alert in Microsoft Sentinel when
+// suspicious authentication sequences are detected.
+// The alert is grouped into an incident for analyst investigation.
+//
+// ============================================
+SigninLogs
+| where TimeGenerated >= ago(30m)
+| summarize
+    FailedAttempts = countif(ResultType != 0),
+    SuccessCount = countif(ResultType == 0),
+    LastFailure = maxif(TimeGenerated, ResultType != 0),
+    LastSuccess = maxif(TimeGenerated, ResultType == 0),
+    IPAddress = any(IPAddress)
+by UserPrincipalName
+| where FailedAttempts >= 3
+| where SuccessCount >= 1
+| where LastSuccess > LastFailure
+| project UserPrincipalName, FailedAttempts, SuccessCount, LastFailure, LastSuccess, IPAddress
+// ============================================
