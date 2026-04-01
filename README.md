@@ -1,9 +1,9 @@
 # Azure SIEM Lab (Microsoft Sentinel)
 
 ## Overview
-This project demonstrates the design and implementation of a cloud-based Security Operations Center (SOC) using Microsoft Azure and Microsoft Sentinel.
+This project is designed to simulates a small scale cloud-based Security Operations Center (SOC) using Microsoft Azure and Microsoft Sentinel.
 
-The environment simulates real-world security monitoring by ingesting authentication and endpoint logs, detecting suspicious activity, and validating alerts through controlled attack scenarios.
+The environment ingests identity and endpoint logs, applies detection logic using KQL, and generates alerts and incidents based on real-world attack scenarios such as brute-force attempts and suspicious endpoint activity.
 
 ---
 
