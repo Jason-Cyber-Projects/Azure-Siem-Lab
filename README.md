@@ -1,7 +1,7 @@
 # Azure SIEM Lab (Microsoft Sentinel)
 
 ## Overview
-This project is designed to simulates a small scale cloud-based Security Operations Center (SOC) using Microsoft Azure and Microsoft Sentinel.
+This project simulates a small scale cloud-based Security Operations Center (SOC) using Microsoft Azure and Microsoft Sentinel.
 
 The environment ingests identity and endpoint logs, applies detection logic using KQL, and generates alerts and incidents based on real-world attack scenarios such as brute-force attempts and suspicious endpoint activity.
 
@@ -9,7 +9,7 @@ The environment ingests identity and endpoint logs, applies detection logic usin
 
 ## What This Project Demonstrates
 - Ability to build, configure, and monitor a SIEM (Microsoft Sentinel)
-- Understanding of endpoint log analysis
+- Ability to analyze authentication and endpoint logs
 - Experience writing detection logic using KQL
 - Ability to validate alerts through simulated attack activity
 - Exposure to incident response and automation workflows
@@ -36,17 +36,17 @@ The environment ingests identity and endpoint logs, applies detection logic usin
 - **Brute-force login attempts** (multiple failed logins)  
 - **Failed login followed by success** (potential credential compromise)  
 - **Suspicious endpoint activity** (PowerShell/admin behavior)
--  **Sign-ins from different IP addresses for the same account** (Impossible logins due to geolocation)
+-  **Sign-ins from different IP addresses for the same account** (unusual access patterns with impossible login detection)
 
 ---
 
 ## Validation Approach
-Detection rules were tested/validated by controlled activity within the environment, including repeated failed logins and endpoint actions, to ensure alerts were triggered and visible in Microsoft Sentinel.
+Detection rules were tested then validated by controlled activity within the environment, including repeated failed logins and endpoint actions, to ensure alerts were triggered and visible in Microsoft Sentinel.
 
 ---
 
 ## Automation
-Basic automation was implemented to:
+Automation was implemented to:
 - Generate incidents in Microsoft Sentinel  
 - Assign severity levels to alerts  
 - Notify analysts of suspicious activity  
