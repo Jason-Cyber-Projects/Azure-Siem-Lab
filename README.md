@@ -36,7 +36,7 @@ The environment ingests identity and endpoint logs, applies detection logic usin
 - **Brute-force login attempts** (multiple failed logins)  
 - **Failed login followed by success** (potential credential compromise)  
 - **Suspicious endpoint activity** (PowerShell/admin behavior)
--  **Sign-ins from different IP addresses for the same account** (unusual access patterns with impossible login detection)
+-  **Sign-ins from different IP addresses for the same account** (unusual access patterns)
 
 ---
 
@@ -86,7 +86,12 @@ azure-soc-lab/
 │   ├── Different-IP-Sign-In.kql
 │   ├── Endpoint-Powershell-Alert.kql
 ```
+## Key Takeaways
 
+- Detections must be validated with real activity, not assumptions
+- Excessive logging without tuning leads to alert fatigue
+- Correlating identity and endpoint logs improves visibility
+- Effective SOC workflows require both detection and response
 ---
 
 ## Notes
