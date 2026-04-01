@@ -1,0 +1,36 @@
+// ============================================
+// Detection: Excessive Failed Logins
+// Source: Microsoft Sentinel Analytics Rule
+// ============================================
+//
+// Description:
+// This detection identifies multiple failed login attempts within a short time window.
+// It is designed to detect potential brute force attacks or password spraying activity.
+//
+// Trigger Logic:
+// - Monitors authentication logs (Entra ID Sign-in Logs)
+// - Groups failed login attempts by user and IP address
+// - Triggers when a defined threshold of failed attempts is exceeded within a time window
+//
+// Why This Matters:
+// Repeated failed login attempts are a common indicator of:
+// - Brute force attacks
+// - Password spraying
+// - Unauthorized access attempts
+//
+// Early detection helps prevent account compromise before a successful login occurs.
+//
+// Analyst Notes:
+// - Investigate the targeted user account
+// - Review the source IP address for reputation or unusual behavior
+// - Check if the activity escalates into a successful login
+// - Consider account lockout or enforcing MFA if not already enabled
+//
+// ============================================
+let threshold = 5;
+SigninLogs
+| where ResultType != 0
+| summarize FailedAttempts=count() 
+    by UserPrincipalName, IPAddress, bin(TimeGenerated, 10m)
+| where FailedAttempts >= threshold
+// ============================================
