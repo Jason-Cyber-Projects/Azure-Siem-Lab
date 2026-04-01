@@ -82,8 +82,10 @@ azure-soc-lab/
 │   ├── automation.png
 │
 ├── queries/
-│   ├── brute-force.kql
-│   ├── failed-success.kql
+│   ├── Excessive-Failed-Logins.kql
+│   ├── Failed-Logins-Then-Successful-Login.kql
+│   ├── Different-IP-Sign-In.kql
+│   ├── Endpoint-Powershell-Alert.kql
 ```
 
 ---
