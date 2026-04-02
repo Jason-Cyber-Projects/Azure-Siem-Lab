@@ -1,5 +1,5 @@
 // ============================================
-// Detection: Different IP / Suspicious New Sign-In
+// Detection: Successful Sign-In from New IP Address
 // Source: Microsoft Sentinel Analytics Rule
 // ============================================
 //
